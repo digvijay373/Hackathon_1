@@ -42,6 +42,7 @@
     <form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
       {% csrf_token %}
       {{form|crispy}}
+      <br>
       <button>Submit</button>
       </form>
     <br>

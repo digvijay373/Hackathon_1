@@ -47,6 +47,11 @@ def upload(request):
         df=df.drop("address.zipCode", axis="columns")
         df=df.sort_values(by="chance", ascending=False)
         # df.set_index('id', inplace=True)
-        df=df.to_html(classes=["table-bordered", "table-striped", "table-hover"])
+        # df=df.to_html(classes=["table-bordered", "table-striped", "table-hover"])
+        json_records = df.reset_index().to_json(orient ='records')
+        arr = []
+        arr = json.loads(json_records)
+        contextt = {'d': arr}
+        return  render(request,'Form/index.html',contextt)
         return HttpResponse(df)
     return render(request, 'Form/upload.html', {'form' : UploadForm})

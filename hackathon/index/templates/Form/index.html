@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admission Predictor App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=ABeeZee">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="static/css/styles.min.css">
+</head>
+
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean">
+            <div class="container"><a class="navbar-brand" href="">Back</a><button class="navbar-toggler" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                   
+                </div>
+            </div>
+        </nav>
+    </div>
+    <div class="article-clean">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-10 col-xl-8 offset-lg-1 offset-xl-2">
+                    <div class="intro">
+                        <h1 class="text-center" style="font-family:ABeeZee, sans-serif;">Admission Predictor App</h1>
+                        
+                    </div>
+                    <div class="text">
+                        <p><br>Here is the list of colleges that you have highest chance of admission into</p>
+                        <h2>colleges</h2>
+                    
+                       
+<div class="container" style="overflow-x:auto;">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Chances</th>
+                <th>In state Tuition</th>
+                <th>Out of state Tuition</th>
+                <th>University Type</th>
+           
+               
+            </tr>
+        </thead>
+        <tbody>
+            {% if d %}  
+            {% for i in d %}
+            <tr>
+                <td>{{i.name}}</td>
+                <td>{{i.chance}}</td>
+                <td>{{i.inStateTuition}}</td>
+                <td>{{i.outOfStateTuition}}</td>
+                <td>{{i.universityType}}</td>
+               
+            </tr>
+            {% endfor %}
+            {% endif %}
+        </tbody>
+    </table>
+</div>
+                       
+                           
+                        
+                        <figure></figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
