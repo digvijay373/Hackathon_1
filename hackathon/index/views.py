@@ -9,8 +9,7 @@ from django.core.cache import caches
 # cache = caches['redis']
 
 def func(gpa, satm , sate, act):
-    url = "https://www.collegedata.com/api/chances/relevant?gpa={}&weightedGpa=4&satScores={}%2C{}&actCompositeScore={}&earlyApp=false".format(gpa, satm,sate, act)
-
+    url = "https://www.collegedata.com/api/chances/relevant?gpa={}&satScores={}%2C{}&actCompositeScore={}&earlyApp=false".format(gpa, satm,sate, act)
     payload={}
     headers = {
     'Authorization': 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NzU4NjE3NTcsImlhdCI6MTY3NTI1Njk1NywianRpIjoiNjQyNTE4NmItNTZjYy00N2VjLTk0ZjMtM2Q4NzM3MzYwOTBmIiwic2NvcGUiOiIiLCJzdWIiOiIyMDA3NzU3ODQifQ.G15sMs3QOUE9KfDwzWvWpRFjmXuflyrWiHBAwvL2oHg',

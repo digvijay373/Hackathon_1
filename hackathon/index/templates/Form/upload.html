@@ -29,9 +29,10 @@
       </div>
     </nav>
     <h1>Hello, Please fill the following form to Know the colleges with highest chance of your admission!</h1>
+    {%load crispy_forms_tags %} 
     <form method="POST" action="{% url 'contact' %}" enctype="multipart/form-data">
       {% csrf_token %}
-      {{form}}
+      {{form|crispy}}
       <button>Submit</button>
       </form>
     <br>
