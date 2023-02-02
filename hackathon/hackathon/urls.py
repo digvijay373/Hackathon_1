@@ -20,5 +20,5 @@ from index import views
 urlpatterns = [
     path('admin/', admin.site.urls),
  
-  path('details/', views.upload, name='contact')
+  path('', views.upload, name='contact')
 ]
